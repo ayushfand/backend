@@ -14,4 +14,11 @@ app.use(express.urlencoded({extended:true,limit:"16kb"})) // handels data like f
 app.use(express.static("public")) // Serves static files (HTML, images, CSS, etc.) from the public directory.
 app.use(cookieParser())
 
+//routes import
+import userRouter from './routes/user.routes.js'
+
+app.use("/api/v1/users",userRouter)
+
+//http://localhost:8000/api/v1/users/register
+
 export {app}
